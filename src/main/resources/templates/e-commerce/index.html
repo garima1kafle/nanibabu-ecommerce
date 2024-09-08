@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Sana Sana Babu Nani Online Store</title>
+    <title>Login - Sana Sana Babu Nani Online Store</title>
     <!-- Favicon -->
     <link rel="icon" th:href="@{/images/SSBNOS Logo.png}" type="image/png">
     <!-- External CSS -->
-    <link rel="stylesheet" href="/css/style.css">
-    <!--Bootsrap-->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -26,52 +26,49 @@
                 </div>
                 <div class="search-login">
                     <input type="text" id="search" name="search" placeholder="Search for products...">
-                    <button type="button" class="btn btn-primary">Search</button> 
+                    <button type="button" class="btn btn-primary">Search</button>
                     <div id="search-suggestions" class="suggestions-dropdown"></div>&nbsp;
                     <nav>
                         <div class="nav navbar-nav navbar-right">
-                            <a href="login.html"><span class="glyphicon glyphicon-user"></span></a> &nbsp;
-                            <a href="carts.html"><span class="glyphicon glyphicon-shopping-cart"></span>
-                              <span class="badge">0</span></a>&nbsp;
+                            <a th:href="@{/login}"><span class="glyphicon glyphicon-user"></span></a> &nbsp;
+                            <a th:href="@{/carts}"><span class="glyphicon glyphicon-shopping-cart"></span>
+                                <span class="badge">0</span></a>&nbsp;
                         </div>
-
                     </nav>
                 </div>
             </div>
         </div>
 
-
-
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
-              <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>                        
-                </button>
-              </div>
-              <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav">
-                  <li><a href="index.html">Home</a></li>
-                  <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                      Collection<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="boysdress.html">Boy Dress</a></li>
-                      <li><a href="girlsdress.html">Girl Dress</a></li>
-                      <li><a href="newarrival.html">New Arrival</a></a></li>
-                      <li><a href="bestseller.html">Best Seller</a></li>
-                      <li><a href="toy.html">Toy</a></li>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li><a th:href="@{/home}">Home</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                Collection <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a th:href="@{/boysdress}">Boy Dress</a></li>
+                                <li><a th:href="@{/girlsdress}">Girl Dress</a></li>
+                                <li><a th:href="@{/newarrival}">New Arrival</a></li>
+                                <li><a th:href="@{/bestseller}">Best Seller</a></li>
+                                <li><a th:href="@{/toy}">Toy</a></li>
+                            </ul>
+                        </li>
+                        <li><a th:href="@{/faqs}">FAQs</a></li>
+                        <li><a th:href="@{/contact}">Contact-Us</a></li>
                     </ul>
-                  </li>
-                  <li><a href="faqs.html">FAQs</a></li>
-                  <li><a href="contact.html">Contact-Us</a></li>
-                </ul>
-              </div>
+                </div>
             </div>
-          </nav>
-
+        </nav>
     </header>
 
     <main class="page">
@@ -262,13 +259,15 @@
         <div class="ad-content">
             <h2>Special Offer!</h2>
             <p>Get 10% off on your first purchase. Order Now!</p>
-            <img src="Pictures/ads.png" alt="Special Offer" class="img-rounded">
+            <img th:src="@{/images/ads.png}" alt="Special Offer" class="img-rounded">
+
             <br><br>
             <button id="close-ad-btn" type="button" class="btn btn-primary">Close</button>
         </div>
     </div>
 
-    <script src="ads.js"></script>
-    <script src="search.js"></script>
+    <script th:src="@{/js/ads.js}"></script>
+	<script th:src="@{/js/search.js}"></script>
+	
 </body>
 </html>
