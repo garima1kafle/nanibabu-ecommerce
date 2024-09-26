@@ -76,7 +76,7 @@
     <main>
         <div class="form-page">
             <h2><b>Register Account</b></h2>
-            <form th:action="@{/submit_registration}" th:object="${user}" method="POST" class="form-group">
+            <form th:action="@{/register}" th:object="${user}" method="POST" class="form-group">
                 <label for="first_name">First Name:</label>
                 <input type="text" id="first_name" class="form-control" th:field="*{firstName}" required>
 
@@ -103,6 +103,10 @@
                     <button type="submit" class="btn btn-primary">Register</button>
                 </div>
             </form>
+			
+			<!-- Total registered users display -->
+			            <p>Total registered users: <span th:text="${totalUsers}">0</span></p>
+			
         </div>
     </main>
 
